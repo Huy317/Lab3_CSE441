@@ -7,6 +7,7 @@ import {
 import { Button } from 'react-native-paper';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
+ 
 const productList = () => {
     const [data, setData] = useState([]);
     const filePath = 'https://dummyjson.com/products';
