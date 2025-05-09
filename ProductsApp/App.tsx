@@ -8,6 +8,8 @@ import { BottomNavigation, Button } from 'react-native-paper';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import ProductList from './ProductList';
 import AddProductPage from './AddProduct';
+import SearchPage from './SearchPage';
+import DetailPage from './DetailPage';
 
 
 function App(): React.JSX.Element {
@@ -21,8 +23,8 @@ function App(): React.JSX.Element {
   const renderScene = BottomNavigation.SceneMap({
     ProductList: ProductList,
     ProductAdd: AddProductPage,
-    ProductSearch: ProductList,
-    ProductDetail: ProductList,
+    ProductSearch: SearchPage,
+    ProductDetail: DetailPage,
   })
   return(
       <SafeAreaProvider>
