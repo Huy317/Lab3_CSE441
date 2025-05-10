@@ -14,7 +14,41 @@ const AddProductPage = () => {
     const [discount, setDiscount] = useState(0);
     
     function handleSubmit(){
-        
+        let missingFields = "Please input: ";
+        if (title == ""){
+            missingFields += "Title,";
+        }
+        if (description == ""){
+            missingFields += "Description,";
+        }
+        if (price == 0){
+            missingFields += "Price,";
+        }
+        if (rating == 0){
+            missingFields += "Rating,";
+        }
+        if (brand == ""){
+            missingFields += "Brand,";
+        }
+        if (discount == 0){
+            missingFields += "Discount,";
+        }
+        if (missingFields != "Please input: "){
+            Alert.alert(missingFields);
+        }else{
+            fetch('https://dummyjson.com/products/add', {
+                method: 'POST',
+                body: JSON.stringify({
+                    title: title,
+                    description: description,
+                    price: price,
+                    discountPercentage: discount,
+                    rating: rating,
+                    brand: brand 
+                }),
+            }).then((res)=>res.json()).then(console.log);
+            Alert.alert("Product added successfully");
+        }
     }
     return(
         <SafeAreaProvider>
